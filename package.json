@@ -1,0 +1,18 @@
+{
+  "name": "kensorshiper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3",
+    "kensorship": "^1.0.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21",
+    "typescript": "^4.9.5"
+  },
+  "scripts": {
+    "dev": "npx tsc; node ./dist/index.js"
+  }
+}
