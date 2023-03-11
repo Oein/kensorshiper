@@ -9,8 +9,8 @@ const client = new Client({
 });
 
 client.on("ready", () => {
-  client.user!.setActivity(`Kensorshiperㅣ${process.env.VER}`, {
-    type: ActivityType.Playing,
+  client.user!.setActivity(`FWordㅣKensorshiperㅣ${process.env.VER}`, {
+    type: ActivityType.Watching,
   });
   console.log(`Logged in as ${client.user!.tag}!`);
 });
