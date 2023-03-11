@@ -1,4 +1,4 @@
-import { Client } from "discord.js";
+import { ActivityType, Client } from "discord.js";
 import kensorship from "kensorship";
 
 import * as dotenv from "dotenv";
@@ -9,19 +9,13 @@ const client = new Client({
 });
 
 client.on("ready", () => {
-  client.user!.setActivity(
-    "k.정보 를 통해 봇의 정보 및 명령어를 확인할수 있습니다",
-    { type: "PLAYING" }
-  );
+  client.user!.setActivity(`Kensorshiperㅣ${process.env.VER}`, {
+    type: ActivityType.Playing,
+  });
   console.log(`Logged in as ${client.user!.tag}!`);
 });
 
 client.on("messageCreate", (msg) => {
-  if (msg.content == "k.정보")
-    return msg.reply({
-      content: `버전 : ${process.env.VER}\n개발자\n> Oein (<https://github.com/Oein>)\n> Sangho129 (<https://github.com/sangho129>)\n사용법\n해당봇은 특별한 명령어가 없으며 메시지 관리 권한이 있을경우 비속어를 차단합니다!`,
-    });
-
   const result = kensorship(msg.content);
   if (result.length > 0)
     return msg.author
