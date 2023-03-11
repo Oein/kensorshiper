@@ -9,7 +9,7 @@ const client = new Client({
 });
 
 client.on("ready", () => {
-  client.user.setActivity(
+  client.user!.setActivity(
     "k.정보 를 통해 봇의 정보 및 명령어를 확인할수 있습니다",
     { type: "PLAYING" }
   );
